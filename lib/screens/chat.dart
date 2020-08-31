@@ -13,6 +13,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         leading: IconButton(
@@ -36,6 +37,25 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
               onPressed: () {}),
         ],
+        title: Container(
+          child: Row(
+            children: [
+              CircleAvatar(
+                child: Image.asset(
+                  'images/img1.png',
+                ),
+                radius: 20,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                'Alice Henry',
+                style: GoogleFonts.roboto(color: Colors.black),
+              ),
+            ],
+          ),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -46,9 +66,15 @@ class _ChatScreenState extends State<ChatScreen> {
               size: 50,
               color: Color.fromRGBO(2, 104, 251, 1),
             ),
-            title: Text(
-              'Images',
-              style: GoogleFonts.roboto(color: Colors.grey),
+            title: Container(
+//              height: 30,
+//              width: 30,
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              child: Text(
+                'Images',
+                style: GoogleFonts.roboto(fontSize: 12, color: Colors.grey),
+              ),
             ),
           ),
           BottomNavigationBarItem(
